@@ -16,7 +16,7 @@ struct CollectionSection: Identifiable {
         
         let newsItems = [CollectionItem(image: "news1", text: "Lorem ipsum dolor sit amet consectetur", title: "Comic con в Астане", date: Date().formateDate()),
                          CollectionItem(image: "news2", text: "Lorem ipsum dolor sit amet consectetur", title: "Выход фильма Дэдпул 3", date: Date().formateDate()),
-                         CollectionItem(image: "news3", text: "Lorem ipsum dolor sit amet consectetur", title: "Есть ли жизнь на марсе?", date: Date().formateDate()),
+                         CollectionItem(image: "news3", text: "Lorem ipsum dolor sit amet consectetur", title: "Есть ли жизнь на Марсе?", date: Date().formateDate()),
                          CollectionItem(image: "news4", text: "Lorem ipsum dolor sit amet consectetur", title: "EURO 2024", date: Date().formateDate())]
         
         let eventsItems = [CollectionItem(image: "event1", text: "Текст в одну строку, если ..."),
