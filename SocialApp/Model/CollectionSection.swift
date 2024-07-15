@@ -26,11 +26,11 @@ struct CollectionSection: Identifiable {
                            CollectionItem(image: "event5", text: "Текст в одну строку, если ..."),
                            CollectionItem(image: "event6", text: "Текст в одну строку, если ...")]
         
-        let userItems = [CollectionItem(image: "person1", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 1"),
-                         CollectionItem(image: "person2", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 2"),
-                         CollectionItem(image: "person3", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 3"),
-                         CollectionItem(image: "person4", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 4"),
-                         CollectionItem(image: "person5", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 5"),]
+        let userItems = [CollectionItem(image: "people1", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 1"),
+                         CollectionItem(image: "people2", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 2"),
+                         CollectionItem(image: "people3", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 3"),
+                         CollectionItem(image: "people4", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 4"),
+                         CollectionItem(image: "people5", text: "Lorem ipsum dolor sit amet consectetur.", title: "User Name 5"),]
         
         let newsSection = CollectionSection(header: "Новости", items: newsItems)
         let eventsSection = CollectionSection(header: "События", items: eventsItems)

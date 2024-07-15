@@ -13,7 +13,7 @@ final class NewsCollectionViewCell: UICollectionViewCell, CellProtocol {
     static var reuseId: String = "NewsCollectionViewCell"
     
     // MARK: - GUI Variables
-    var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let image = CustomImage(frame: .zero)
         image.layer.cornerRadius = 20
         image.isUserInteractionEnabled = true
@@ -28,7 +28,7 @@ final class NewsCollectionViewCell: UICollectionViewCell, CellProtocol {
     
     private lazy var dateLabel: UILabel = {
         let label = CustomLabel()
-        label.configure(color: .systemGray, numberOfLines: 1, font: .systemFont(ofSize: 12))
+        label.configure(color: .gray, numberOfLines: 1, font: .systemFont(ofSize: 12))
          return label
      }()
     

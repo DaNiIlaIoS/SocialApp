@@ -44,6 +44,7 @@ final class EventCollectionViewCell: UICollectionViewCell, CellProtocol {
         return stack
     }()
     
+    // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
