@@ -17,6 +17,8 @@ final class MainViewController: UIViewController {
         
         collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: EventCollectionViewCell.reuseId)
         
+        collectionView.register(UsersCollectionViewCell.self, forCellWithReuseIdentifier: UsersCollectionViewCell.reuseId)
+        
         collectionView.dataSource = self
 //        collectionView.delegate = self
         
@@ -42,7 +44,8 @@ final class MainViewController: UIViewController {
         UICollectionViewCompositionalLayout { section, _ in
             switch section {
             case 0: self.createNewsSection()
-            default: self.createEventSection()
+            case 1: self.createEventSection()
+            default: self.createUsersSection()
             }
         }
     }
@@ -77,7 +80,7 @@ final class MainViewController: UIViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.75),
                                                heightDimension: .estimated(54))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 3)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20)
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
@@ -87,19 +90,30 @@ final class MainViewController: UIViewController {
         return section
     }
     
-//    private func createUsersSection() -> NSCollectionLayoutSection {
-//        // Item
-//        
-//        // Group
-//        
-//        // Section
-//    }
+    private func createUsersSection() -> NSCollectionLayoutSection {
+        // Item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        // Group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(190),
+                                               heightDimension: .estimated(170))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20)
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30)
+        
+        return section
+    }
 
 }
 
 extension MainViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        collectionData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -114,8 +128,12 @@ extension MainViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.reuseId, for: indexPath) as? NewsCollectionViewCell else { return UICollectionViewCell() }
             cell.setupCell(item: item)
             return cell
-        default:
+        case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.reuseId, for: indexPath) as? EventCollectionViewCell else { return UICollectionViewCell() }
+            cell.setupCell(item: item)
+            return cell
+        default:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsersCollectionViewCell.reuseId, for: indexPath) as? UsersCollectionViewCell else { return UICollectionViewCell() }
             cell.setupCell(item: item)
             return cell
         }
