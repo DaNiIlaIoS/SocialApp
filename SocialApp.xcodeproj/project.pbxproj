@@ -22,7 +22,7 @@
 		48A9D35C2C450DE7004D9AC9 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35B2C450DE7004D9AC9 /* NewsCollectionViewCell.swift */; };
 		48A9D35E2C450E01004D9AC9 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */; };
 		48A9D3602C450F03004D9AC9 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35F2C450F03004D9AC9 /* CustomImage.swift */; };
-		48A9D3632C451278004D9AC9 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D3622C451278004D9AC9 /* CustomTextLabel.swift */; };
+		48A9D3632C451278004D9AC9 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D3622C451278004D9AC9 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		48A9D35B2C450DE7004D9AC9 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		48A9D35F2C450F03004D9AC9 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
-		48A9D3622C451278004D9AC9 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
+		48A9D3622C451278004D9AC9 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				48A9D35F2C450F03004D9AC9 /* CustomImage.swift */,
-				48A9D3622C451278004D9AC9 /* CustomTextLabel.swift */,
+				48A9D3622C451278004D9AC9 /* CustomLabel.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 				48A9D3332C44F46E004D9AC9 /* AppDelegate.swift in Sources */,
 				48A9D3352C44F46E004D9AC9 /* SceneDelegate.swift in Sources */,
 				48A9D3472C44F4BD004D9AC9 /* TabBarController.swift in Sources */,
-				48A9D3632C451278004D9AC9 /* CustomTextLabel.swift in Sources */,
+				48A9D3632C451278004D9AC9 /* CustomLabel.swift in Sources */,
 				48A9D3592C450694004D9AC9 /* CollectionSection.swift in Sources */,
 				48A9D35E2C450E01004D9AC9 /* CellProtocol.swift in Sources */,
 				48A9D35C2C450DE7004D9AC9 /* NewsCollectionViewCell.swift in Sources */,
