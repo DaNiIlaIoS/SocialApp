@@ -22,6 +22,7 @@
 		48A9D35C2C450DE7004D9AC9 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35B2C450DE7004D9AC9 /* NewsCollectionViewCell.swift */; };
 		48A9D35E2C450E01004D9AC9 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */; };
 		48A9D3602C450F03004D9AC9 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35F2C450F03004D9AC9 /* CustomImage.swift */; };
+		48A9D3632C451278004D9AC9 /* CustomTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D3622C451278004D9AC9 /* CustomTextLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		48A9D35B2C450DE7004D9AC9 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		48A9D35F2C450F03004D9AC9 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		48A9D3622C451278004D9AC9 /* CustomTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				48A9D35A2C450DCF004D9AC9 /* View */,
 				48A9D3482C44F55A004D9AC9 /* Controller */,
 				48A9D3572C450625004D9AC9 /* Extensions */,
+				48A9D3612C451206004D9AC9 /* CustomUI */,
 				48A9D33B2C44F471004D9AC9 /* Assets.xcassets */,
 				48A9D33D2C44F471004D9AC9 /* LaunchScreen.storyboard */,
 				48A9D3402C44F471004D9AC9 /* Info.plist */,
@@ -110,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				48A9D3532C450579004D9AC9 /* CollectionItem.swift */,
-				48A9D35F2C450F03004D9AC9 /* CustomImage.swift */,
 				48A9D3582C450694004D9AC9 /* CollectionSection.swift */,
 			);
 			path = Model;
@@ -131,6 +133,15 @@
 				48A9D35B2C450DE7004D9AC9 /* NewsCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		48A9D3612C451206004D9AC9 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				48A9D35F2C450F03004D9AC9 /* CustomImage.swift */,
+				48A9D3622C451278004D9AC9 /* CustomTextLabel.swift */,
+			);
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				48A9D3332C44F46E004D9AC9 /* AppDelegate.swift in Sources */,
 				48A9D3352C44F46E004D9AC9 /* SceneDelegate.swift in Sources */,
 				48A9D3472C44F4BD004D9AC9 /* TabBarController.swift in Sources */,
+				48A9D3632C451278004D9AC9 /* CustomTextLabel.swift in Sources */,
 				48A9D3592C450694004D9AC9 /* CollectionSection.swift in Sources */,
 				48A9D35E2C450E01004D9AC9 /* CellProtocol.swift in Sources */,
 				48A9D35C2C450DE7004D9AC9 /* NewsCollectionViewCell.swift in Sources */,
