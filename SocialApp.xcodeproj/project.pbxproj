@@ -23,6 +23,8 @@
 		48A9D35E2C450E01004D9AC9 /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */; };
 		48A9D3602C450F03004D9AC9 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D35F2C450F03004D9AC9 /* CustomImage.swift */; };
 		48A9D3632C451278004D9AC9 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D3622C451278004D9AC9 /* CustomLabel.swift */; };
+		48A9D3652C4559E9004D9AC9 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D3642C4559E9004D9AC9 /* EventCollectionViewCell.swift */; };
+		48A9D3672C456252004D9AC9 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9D3662C456252004D9AC9 /* UsersCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		48A9D35F2C450F03004D9AC9 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 		48A9D3622C451278004D9AC9 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		48A9D3642C4559E9004D9AC9 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		48A9D3662C456252004D9AC9 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 			children = (
 				48A9D35D2C450E01004D9AC9 /* CellProtocol.swift */,
 				48A9D35B2C450DE7004D9AC9 /* NewsCollectionViewCell.swift */,
+				48A9D3642C4559E9004D9AC9 /* EventCollectionViewCell.swift */,
+				48A9D3662C456252004D9AC9 /* UsersCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,12 +227,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A9D34C2C44F581004D9AC9 /* ProfileViewController.swift in Sources */,
+				48A9D3652C4559E9004D9AC9 /* EventCollectionViewCell.swift in Sources */,
 				48A9D34A2C44F574004D9AC9 /* MessagesViewController.swift in Sources */,
 				48A9D3602C450F03004D9AC9 /* CustomImage.swift in Sources */,
 				48A9D3542C450579004D9AC9 /* CollectionItem.swift in Sources */,
 				48A9D3562C450616004D9AC9 /* Dete+Ex.swift in Sources */,
 				48A9D3372C44F46E004D9AC9 /* MainViewController.swift in Sources */,
 				48A9D3332C44F46E004D9AC9 /* AppDelegate.swift in Sources */,
+				48A9D3672C456252004D9AC9 /* UsersCollectionViewCell.swift in Sources */,
 				48A9D3352C44F46E004D9AC9 /* SceneDelegate.swift in Sources */,
 				48A9D3472C44F4BD004D9AC9 /* TabBarController.swift in Sources */,
 				48A9D3632C451278004D9AC9 /* CustomLabel.swift in Sources */,
