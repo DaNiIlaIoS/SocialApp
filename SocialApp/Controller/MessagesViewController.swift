@@ -8,15 +8,20 @@
 import UIKit
 import SnapKit
 
-final class MessagesViewController: UIViewController {
+class MessagesViewController: UIViewController {
+    // MARK: - GUI Variables
     
+    // MARK: - Properties
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    // MARK: - Methods
     private func setupUI() {
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .cyan
         
         setupConstraints()
     }
@@ -24,4 +29,5 @@ final class MessagesViewController: UIViewController {
     private func setupConstraints() {
         
     }
+
 }

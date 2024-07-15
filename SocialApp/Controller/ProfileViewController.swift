@@ -8,15 +8,20 @@
 import UIKit
 import SnapKit
 
-final class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController {
+    // MARK: - GUI Variables
     
+    // MARK: - Properties
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    // MARK: - Methods
     private func setupUI() {
-        view.backgroundColor = .green
+        view.backgroundColor = .cyan
         
         setupConstraints()
     }
@@ -24,4 +29,5 @@ final class ProfileViewController: UIViewController {
     private func setupConstraints() {
         
     }
+
 }
