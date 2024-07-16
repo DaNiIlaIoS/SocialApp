@@ -6,7 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
+//1 delegate + viewForSupplementaryElementOfKind
+//2 create header cell - UICollectionReusableView
+//3 registe
+//4 setup size
+//5 add in section
 final class MainViewController: UIViewController {
     // MARK: - GUI Variables
     private lazy var collectionView: UICollectionView = {
@@ -19,8 +25,14 @@ final class MainViewController: UIViewController {
         
         collectionView.register(UsersCollectionViewCell.self, forCellWithReuseIdentifier: UsersCollectionViewCell.reuseId)
         
+        // Header
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.reuseId)
+        
+        // Footer
+        collectionView.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.reuseId)
+        
         collectionView.dataSource = self
-//        collectionView.delegate = self
+        collectionView.delegate = self
         
         return collectionView
     }()
@@ -32,6 +44,10 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        collectionView.frame = view.frame
     }
     
     // MARK: - Methods
@@ -64,7 +80,8 @@ final class MainViewController: UIViewController {
         // Section
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 30, bottom: 40, trailing: 30)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 30, bottom: 10, trailing: 30)
+        section.boundarySupplementaryItems = [self.createHeaderSize(), self.createFooterSize()]
         
         return section
     }
@@ -86,6 +103,7 @@ final class MainViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 30, bottom: 40, trailing: 30)
+        section.boundarySupplementaryItems = [self.createHeaderSize()]
         
         return section
     }
@@ -105,10 +123,22 @@ final class MainViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30)
+        section.boundarySupplementaryItems = [self.createHeaderSize()]
         
         return section
     }
-
+    
+    private func createHeaderSize() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                 heightDimension: .absolute(50)),
+              elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+    }
+    
+    private func createFooterSize() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                 heightDimension: .absolute(50)),
+              elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource {
@@ -140,8 +170,32 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-//extension MainViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        <#code#>
-//    }
-//}
+extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let item = collectionData[indexPath.section]
+        
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.reuseId, for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+            
+            switch indexPath.section {
+            case 0: header.setupHeader(title: item.header, buttonImage: UIImage(systemName: "newspaper"))
+            case 1: header.setupHeader(title: item.header, buttonTitle: "Подробнее")
+            case 2: header.setupHeader(title: item.header, buttonTitle: "Показать всех")
+            default: return header
+            }
+            
+            header.block = {
+                print(indexPath)
+            }
+            
+            return header
+        case UICollectionView.elementKindSectionFooter:
+            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterCollectionReusableView.reuseId, for: indexPath) as? FooterCollectionReusableView else { return UICollectionReusableView() }
+            return footer
+        default:
+            return UICollectionReusableView()
+        }
+    }
+}

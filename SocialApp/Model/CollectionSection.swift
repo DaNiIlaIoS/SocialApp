@@ -14,7 +14,7 @@ struct CollectionSection: Identifiable {
     
     static func mockData() -> [CollectionSection] {
         
-        let newsItems = [CollectionItem(image: "news1", text: "Lorem ipsum dolor sit amet consectetur", title: "Comic con в Астане", date: Date().formateDate()),
+        let newsItems = [CollectionItem(image: "news1", text: "Lorem ipsum dolor sit amet consectetur", title: "Какая то новость", date: Date().formateDate()),
                          CollectionItem(image: "news2", text: "Lorem ipsum dolor sit amet consectetur", title: "Выход фильма Дэдпул 3", date: Date().formateDate()),
                          CollectionItem(image: "news3", text: "Lorem ipsum dolor sit amet consectetur", title: "Есть ли жизнь на Марсе?", date: Date().formateDate()),
                          CollectionItem(image: "news4", text: "Lorem ipsum dolor sit amet consectetur", title: "EURO 2024", date: Date().formateDate())]
