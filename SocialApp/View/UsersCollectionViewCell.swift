@@ -43,7 +43,7 @@ final class UsersCollectionViewCell: UICollectionViewCell, CellProtocol{
     private lazy var stackView: UIStackView = {
        let stack = UIStackView()
         stack.axis = .vertical
-        stack.distribution = .fill
+        stack.distribution = .equalSpacing
         stack.alignment = .center
         stack.spacing = 5
         

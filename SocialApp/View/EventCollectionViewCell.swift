@@ -33,7 +33,7 @@ final class EventCollectionViewCell: UICollectionViewCell, CellProtocol {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.distribution = .fill
+        stack.distribution = .equalSpacing
         stack.alignment = .center
         stack.spacing = 10
         
