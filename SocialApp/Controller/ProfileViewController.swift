@@ -15,8 +15,8 @@ class ProfileViewController: UIViewController {
     private lazy var activityIndicator: UIActivityIndicatorView = {
        let indicator = UIActivityIndicatorView()
         
-        indicator.frame.origin.x = view.frame.size.width / 2
-        indicator.frame.origin.y = view.frame.size.height / 2
+        indicator.frame.origin.x = view.center.x
+        indicator.frame.origin.y = view.center.y
         
         indicator.hidesWhenStopped = true
         indicator.style = .large
