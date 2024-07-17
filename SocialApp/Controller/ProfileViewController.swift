@@ -6,28 +6,56 @@
 //
 
 import UIKit
-import SnapKit
+import WebKit
 
 class ProfileViewController: UIViewController {
     // MARK: - GUI Variables
+    private lazy var webView: WKWebView = WKWebView(frame: view.frame)
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+       let indicator = UIActivityIndicatorView()
+        
+        indicator.frame.origin.x = view.frame.size.width / 2
+        indicator.frame.origin.y = view.frame.size.height / 2
+        
+        indicator.hidesWhenStopped = true
+        indicator.style = .large
+        indicator.startAnimating()
+        
+        return indicator
+    }()
     
     // MARK: - Properties
+    let url = URL(string: "https://vk.com/daniil_sivozhelezov")
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        webView.navigationDelegate = self
+        
         setupUI()
     }
     
     // MARK: - Methods
     private func setupUI() {
-        view.backgroundColor = .cyan
+        view.addSubview(webView)
+        view.addSubview(activityIndicator)
         
-        setupConstraints()
+        createRequest()
     }
     
-    private func setupConstraints() {
-        
+    private func createRequest() {
+        if let url = url {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
     }
+}
 
+extension ProfileViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("didFinish")
+        activityIndicator.stopAnimating()
+    }
 }
